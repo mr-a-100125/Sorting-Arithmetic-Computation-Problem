@@ -7,6 +7,8 @@ read -p "Enter value for -> b : " b
 read -p "Enter value for -> c : " c
 
 declare -A resultDict
+declare -a resultArr
+pos=0
 
 #result1 of a+b*c
 result1=$(($a+$b*$c))
@@ -23,3 +25,10 @@ resultDict[c*a/b]=$result3
 #result4 of a%b+c
 result4=$(($a%$b+$c))
 resultDict[a%b+c]=$result4
+
+#Reading the values from dictionary to an array.
+for values in ${resultDict[@]}
+do
+	resultArr[pos]=values
+	pos=$(($pos+1))
+done
