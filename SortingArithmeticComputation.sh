@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 echo "Welcome to Sorting Arithmetic Computation Problem."
 
 #reading a,b &c values.
@@ -31,4 +31,23 @@ for values in ${resultDict[@]}
 do
 	resultArr[$pos]=$values
 	pos=$(($pos+1))
+done
+
+#Sorting Array in Descening order.
+for ((i=0; i<=$((${#resultArr[@]}-1)); i++))
+do
+	for ((j=0; j<$((${#resultArr[@]}-1)); j++))
+	do
+		if [ ${resultArr[i]} -gt ${resultArr[j]} ]
+		then 
+			temp=${resultArr[j]}
+ 			resultArr[$j]=${resultArr[i]}
+ 			resultArr[$i]=$temp
+ 		fi
+ 	done
+done
+
+for value in ${resultArr[@]}
+do
+	echo "$value"
 done
