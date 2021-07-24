@@ -38,7 +38,7 @@ for ((i=0; i<=$((${#resultArr[@]}-1)); i++))
 do
 	for ((j=0; j<$((${#resultArr[@]}-1)); j++))
 	do
-		if [ ${resultArr[i]} -gt ${resultArr[j]} ]
+		if [ ${resultArr[i]} -lt ${resultArr[j]} ]
 		then 
 			temp=${resultArr[j]}
  			resultArr[$j]=${resultArr[i]}
