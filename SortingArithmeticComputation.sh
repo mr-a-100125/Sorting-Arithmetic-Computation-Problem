@@ -46,7 +46,7 @@ do
  		fi
  	done
 done
-
+echo "Values in Descending order : "
 for value in ${resultArr[@]}
 do
 	echo "$value"
@@ -66,6 +66,7 @@ do
         done
 done
 
+echo "Values in Ascending order  : "
 for value in ${resultArr[@]}
 do
         echo "$value"
