@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash -x
 echo "Welcome to Sorting Arithmetic Computation Problem."
 
 #reading a,b &c values.
@@ -29,6 +29,6 @@ resultDict[a%b+c]=$result4
 #Reading the values from dictionary to an array.
 for values in ${resultDict[@]}
 do
-	resultArr[pos]=values
+	resultArr[$pos]=$values
 	pos=$(($pos+1))
 done
