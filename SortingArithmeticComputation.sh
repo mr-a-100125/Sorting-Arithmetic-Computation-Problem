@@ -38,7 +38,7 @@ for ((i=0; i<=$((${#resultArr[@]}-1)); i++))
 do
 	for ((j=0; j<$((${#resultArr[@]}-1)); j++))
 	do
-		if [ ${resultArr[i]} -lt ${resultArr[j]} ]
+		if [ ${resultArr[i]} -gt ${resultArr[j]} ]
 		then 
 			temp=${resultArr[j]}
  			resultArr[$j]=${resultArr[i]}
@@ -50,4 +50,23 @@ done
 for value in ${resultArr[@]}
 do
 	echo "$value"
+done
+
+#Sorting Array in Ascening order.
+for ((i=0; i<=$((${#resultArr[@]}-1)); i++))
+do
+        for ((j=0; j<$((${#resultArr[@]}-1)); j++))
+        do
+                if [ ${resultArr[i]} -lt ${resultArr[j]} ]
+                then
+                        temp=${resultArr[j]}
+                        resultArr[$j]=${resultArr[i]}
+                        resultArr[$i]=$temp
+                fi
+        done
+done
+
+for value in ${resultArr[@]}
+do
+        echo "$value"
 done
